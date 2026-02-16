@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "id": "hanon-01",
+    "title": "Hanon Exercise #1",
+    "description": "Classic finger independence exercise based on Hanon No. 1",
+    "difficulty": "intermediate",
+    "bpm": 100,
+    "timeSignature": [4, 4],
+    "tags": ["hanon", "exercise", "finger-independence"]
+  },
+  "notes": [
+    { "noteId": "C4", "beatPosition": 0, "duration": 0.5 },
+    { "noteId": "E4", "beatPosition": 0.5, "duration": 0.5 },
+    { "noteId": "F4", "beatPosition": 1, "duration": 0.5 },
+    { "noteId": "G4", "beatPosition": 1.5, "duration": 0.5 },
+    { "noteId": "A4", "beatPosition": 2, "duration": 0.5 },
+    { "noteId": "G4", "beatPosition": 2.5, "duration": 0.5 },
+    { "noteId": "F4", "beatPosition": 3, "duration": 0.5 },
+    { "noteId": "E4", "beatPosition": 3.5, "duration": 0.5 },
+
+    { "noteId": "D4", "beatPosition": 4, "duration": 0.5 },
+    { "noteId": "F4", "beatPosition": 4.5, "duration": 0.5 },
+    { "noteId": "G4", "beatPosition": 5, "duration": 0.5 },
+    { "noteId": "A4", "beatPosition": 5.5, "duration": 0.5 },
+    { "noteId": "B4", "beatPosition": 6, "duration": 0.5 },
+    { "noteId": "A4", "beatPosition": 6.5, "duration": 0.5 },
+    { "noteId": "G4", "beatPosition": 7, "duration": 0.5 },
+    { "noteId": "F4", "beatPosition": 7.5, "duration": 0.5 },
+
+    { "noteId": "E4", "beatPosition": 8, "duration": 0.5 },
+    { "noteId": "G4", "beatPosition": 8.5, "duration": 0.5 },
+    { "noteId": "A4", "beatPosition": 9, "duration": 0.5 },
+    { "noteId": "B4", "beatPosition": 9.5, "duration": 0.5 },
+    { "noteId": "C5", "beatPosition": 10, "duration": 0.5 },
+    { "noteId": "B4", "beatPosition": 10.5, "duration": 0.5 },
+    { "noteId": "A4", "beatPosition": 11, "duration": 0.5 },
+    { "noteId": "G4", "beatPosition": 11.5, "duration": 0.5 },
+
+    { "noteId": "E4", "beatPosition": 12, "duration": 0.5 },
+    { "noteId": "G4", "beatPosition": 12.5, "duration": 0.5 },
+    { "noteId": "F4", "beatPosition": 13, "duration": 0.5 },
+    { "noteId": "E4", "beatPosition": 13.5, "duration": 0.5 },
+    { "noteId": "D4", "beatPosition": 14, "duration": 0.5 },
+    { "noteId": "E4", "beatPosition": 14.5, "duration": 0.5 },
+    { "noteId": "F4", "beatPosition": 15, "duration": 0.5 },
+    { "noteId": "C4", "beatPosition": 15.5, "duration": 1.5 }
+  ]
+}

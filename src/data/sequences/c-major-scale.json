@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "id": "c-major-scale",
+    "title": "C Major Scale",
+    "description": "Simple ascending and descending C major scale",
+    "difficulty": "beginner",
+    "bpm": 90,
+    "timeSignature": [4, 4],
+    "tags": ["scale", "beginner"]
+  },
+  "notes": [
+    { "noteId": "C4", "beatPosition": 0, "duration": 1 },
+    { "noteId": "D4", "beatPosition": 1, "duration": 1 },
+    { "noteId": "E4", "beatPosition": 2, "duration": 1 },
+    { "noteId": "F4", "beatPosition": 3, "duration": 1 },
+    { "noteId": "G4", "beatPosition": 4, "duration": 1 },
+    { "noteId": "A4", "beatPosition": 5, "duration": 1 },
+    { "noteId": "B4", "beatPosition": 6, "duration": 1 },
+    { "noteId": "C5", "beatPosition": 7, "duration": 1 },
+    { "noteId": "B4", "beatPosition": 9, "duration": 1 },
+    { "noteId": "A4", "beatPosition": 10, "duration": 1 },
+    { "noteId": "G4", "beatPosition": 11, "duration": 1 },
+    { "noteId": "F4", "beatPosition": 12, "duration": 1 },
+    { "noteId": "E4", "beatPosition": 13, "duration": 1 },
+    { "noteId": "D4", "beatPosition": 14, "duration": 1 },
+    { "noteId": "C4", "beatPosition": 15, "duration": 1 }
+  ]
+}
