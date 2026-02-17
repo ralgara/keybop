@@ -54,3 +54,10 @@ Phase 1 (Vite scaffold) is complete. See `docs/IMPLEMENTATION_PLAN.md` for the f
 - Constants centralized in `src/engine/constants.ts`
 - Custom key mappings persisted to localStorage under key `keybop-keymap`
 - Commit messages: no AI attribution in commit messages
+
+## Cloud Environment Setup
+
+Before using Claude Code on the web (cloud sessions), ensure the following are configured:
+
+1. **Add the GitHub token** — Go to the project's environment variables and add your GitHub personal access token so that git operations (push, PR creation) work correctly.
+2. **Install the GitHub integration** — Run `/install-github-app` to install the GitHub app integration. This enables PR creation, issue management, and other GitHub API operations from within the cloud session.
