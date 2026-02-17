@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "id": "custom-example",
+    "title": "Chord Bursts",
+    "description": "Quick chord-like bursts to practice hitting multiple keys in rapid succession.",
+    "difficulty": "advanced",
+    "bpm": 120,
+    "timeSignature": [4, 4],
+    "tags": ["chords", "speed", "advanced"]
+  },
+  "notes": [
+    { "noteId": "C4", "beatPosition": 0, "duration": 1 },
+    { "noteId": "E4", "beatPosition": 0, "duration": 1 },
+    { "noteId": "G4", "beatPosition": 0, "duration": 1 },
+
+    { "noteId": "D4", "beatPosition": 2, "duration": 1 },
+    { "noteId": "F4", "beatPosition": 2, "duration": 1 },
+    { "noteId": "A4", "beatPosition": 2, "duration": 1 },
+
+    { "noteId": "E4", "beatPosition": 4, "duration": 1 },
+    { "noteId": "G4", "beatPosition": 4, "duration": 1 },
+    { "noteId": "B4", "beatPosition": 4, "duration": 1 },
+
+    { "noteId": "F4", "beatPosition": 6, "duration": 1 },
+    { "noteId": "A4", "beatPosition": 6, "duration": 1 },
+    { "noteId": "C5", "beatPosition": 6, "duration": 1 },
+
+    { "noteId": "C4", "beatPosition": 8, "duration": 0.5 },
+    { "noteId": "D4", "beatPosition": 8.5, "duration": 0.5 },
+    { "noteId": "E4", "beatPosition": 9, "duration": 0.5 },
+    { "noteId": "F4", "beatPosition": 9.5, "duration": 0.5 },
+    { "noteId": "G4", "beatPosition": 10, "duration": 0.5 },
+    { "noteId": "A4", "beatPosition": 10.5, "duration": 0.5 },
+    { "noteId": "B4", "beatPosition": 11, "duration": 0.5 },
+    { "noteId": "C5", "beatPosition": 11.5, "duration": 0.5 },
+
+    { "noteId": "C5", "beatPosition": 12, "duration": 1 },
+    { "noteId": "G4", "beatPosition": 12, "duration": 1 },
+    { "noteId": "E4", "beatPosition": 12, "duration": 1 },
+    { "noteId": "C4", "beatPosition": 12, "duration": 1 }
+  ]
+}

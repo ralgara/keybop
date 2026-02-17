@@ -1,42 +1,341 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.app {
+  width: 100%;
+}
+
+/* ==================== MAIN MENU ==================== */
+
+.main-menu {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.menu-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
-.card {
-  padding: 2em;
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  border-radius: 8px;
 }
 
-.read-the-docs {
-  color: #888;
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card);
+}
+
+/* ==================== SEQUENCE SELECTOR ==================== */
+
+.sequence-selector h3 {
+  text-align: left;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sequence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sequence-item {
+  text-align: left;
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  width: 100%;
+}
+
+.sequence-item:hover {
+  border-color: var(--bg-card);
+}
+
+.sequence-item.selected {
+  border-color: var(--accent);
+  background: rgba(233, 69, 96, 0.08);
+}
+
+.sequence-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.sequence-meta {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.35rem;
+}
+
+.difficulty-badge {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.bpm-badge {
+  color: var(--text-secondary);
+}
+
+.sequence-desc {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* ==================== SETTINGS ==================== */
+
+.settings-panel h3 {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.speed-toggle {
+  margin-bottom: 1.5rem;
+}
+
+.speed-toggle label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.speed-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.speed-buttons button {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.speed-buttons button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.speed-buttons button:hover:not(.active) {
+  background: var(--bg-card);
+}
+
+/* ==================== KEY MAP EDITOR ==================== */
+
+.keymap-editor h3 {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.keymap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 0.5rem;
+}
+
+.keymap-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--bg-secondary);
+  padding: 0.75rem 0.5rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+}
+
+.keymap-item:hover {
+  border-color: var(--bg-card);
+}
+
+.keymap-item.listening {
+  border-color: var(--accent);
+  animation: pulse-border 1s ease infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--accent); }
+  50% { border-color: transparent; }
+}
+
+.keymap-note {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.keymap-key {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ==================== GAME SCREEN ==================== */
+
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.canvas-container {
+  position: relative;
+}
+
+.pause-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 26, 46, 0.85);
+  border-radius: 8px;
+}
+
+.pause-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.pause-overlay p {
+  color: var(--text-secondary);
+}
+
+/* ==================== HUD ==================== */
+
+.hud {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.hud > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hud-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.hud-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==================== RESULTS SCREEN ==================== */
+
+.results-screen {
+  text-align: center;
+}
+
+.results-screen h1 {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.results-grade {
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.results-title {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.results-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 320px;
+  margin: 0 auto 1.5rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-row.perfect .stat-value {
+  color: var(--perfect);
+}
+
+.stat-row.good .stat-value {
+  color: var(--good);
+}
+
+.stat-row.miss .stat-value {
+  color: var(--miss);
+}
+
+.results-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
 }
