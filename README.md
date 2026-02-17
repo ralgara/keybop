@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# KeyBop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A finger dexterity trainer for keyboard and piano players. KeyBop is a rhythm game-style web app that displays falling notes on a piano roll — you play along on your keyboard, earning points for accuracy and timing precision.
 
-Currently, two official plugins are available:
+## How It Works
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Pick an exercise** from the menu (scales, Hanon patterns, speed drills)
+2. **Press Start** and watch notes fall toward the hit zone
+3. **Hit the right key at the right time** — timing determines your grade:
+   - **PERFECT** (within 50ms) — 300 points
+   - **GOOD** (within 120ms) — 100 points
+   - **MISS** — 0 points, combo resets
+4. **Build combos** for bonus multipliers on consecutive hits
+5. **Review your results** with an accuracy breakdown at the end
 
-## React Compiler
+## Default Key Map
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The home row maps to a C major octave:
 
-## Expanding the ESLint configuration
+| Key | Note |
+|-----|------|
+| A   | C4   |
+| S   | D4   |
+| D   | E4   |
+| F   | F4   |
+| G   | G4   |
+| H   | A4   |
+| J   | B4   |
+| K   | C5   |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Keys can be remapped in Settings. Custom bindings persist to localStorage.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Controls
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Escape** — pause / resume during gameplay
+- **Settings** panel on the main menu for key remapping and speed toggle
+- **Slow mode** (0.5x) available for practice
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Included Exercises
+
+- **C Major Scale** — ascending and descending, 90 BPM (beginner)
+- **Hanon Exercise #1** — finger independence pattern, 100 BPM (intermediate)
+- **Quick Fingers** — mixed intervals with fast runs, 120 BPM (advanced)
+
+## Development
+
+```bash
+npm install
+npm run dev       # start dev server
+npm run build     # production build
+npm run lint      # run ESLint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technical Details
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React + TypeScript** with Vite, strict mode
+- **HTML Canvas** for the piano roll and all game rendering
+- **Zero external dependencies** beyond React and Vite defaults
+- **Engine/UI separation** — the game engine is pure TypeScript with no React imports; it owns the `requestAnimationFrame` loop and communicates with React through state snapshot callbacks (~15fps throttled to avoid interfering with 60fps canvas)
+- **React Context + useReducer** for UI state (no Redux or other state libraries)
+- **`event.code`** for key mapping (physical key position, layout-agnostic)
+- **Beat-based sequences** in JSON, converted to milliseconds at load time for BPM flexibility
